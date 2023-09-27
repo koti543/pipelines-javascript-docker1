@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: kotipipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kotipipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: kotipipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: kotipipelinesjavascriptdocker 
+          image: containrimage.azurecr.io/kotipipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
